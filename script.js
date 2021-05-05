@@ -26,9 +26,19 @@ function generatePassword() {
 
   alert("You chose to have " + lengthPass + " characters");
 
+  //confirm what is included in password
   var checkUpper = confirm("Click OK to confirm if you would like to include uppercase letters");
   var checkLower = confirm("Click OK to confirm if you would like to include lowercase letters");
   var checkUpper = confirm("Click OK to confirm if you would like to include numbers");
+  var checkSpecialChar = confirm("Click OK to confirm if you would like to special characters");
+  //in case a parameter isn't chosen
+    while(checkUpper === false && checkLower === false && checkNum === false && checkSpecialChar === false) {
+      alert("Please choose at least one option for your password");
+      var checkUpper = confirm("Click OK to confirm if you would like to include uppercase letters");
+      var checkLower = confirm("Click OK to confirm if you would like to include lowercase letters");
+      var checkUpper = confirm("Click OK to confirm if you would like to include numbers");
+      var checkSpecialChar = confirm("Click OK to confirm if you would like to special characters");
+    }
 }
 
 console.log(generatePassword);
