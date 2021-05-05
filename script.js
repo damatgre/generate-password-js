@@ -22,6 +22,8 @@ function generatePassword() {
     prompt("Password must have between 8 and 128 characters. Try again.");
     var lengthPass = prompt("How many characters would you like in your password? Must be between 8 and 128 characters.")
   }
+
+  alert("You chose to have " + lengthPass + " characters");
 }
 
 console.log(generatePassword);
