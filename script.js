@@ -18,16 +18,64 @@ function length() {
     alert("Please choose the parameters of your password using the next four prompts");
     length = lengthPass();
 
-  } else (lengthPass < 8 || lengthPass > 128); {
+  } else if (lengthPass < 8 || lengthPass > 128) {
     alert("Password must be between 8 and 128 characters");
     length();
   }
 };
 
-function determineUppercase() {
-  uppercaseCheck = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
+//function to determine uppercase
+function chooseUppercase() {
+  checkUpper = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
+
+  if (checkUpper === null || checkUpper === "") {
+    alert("Please type an answer")
+    chooseUppercase();
+
+  } else if 
+    (checkUpper === "yes" || checkUpper === "Yes") {
+    chooseUppercase = true;
+    return checkUpper;
+
+  } else if  
+    (checkUpper === "no" || checkUpper === "n") {
+    chooseUppercase = false;
+    return checkUpper;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseUppercase();
+  }
+
+  return checkUpper;
 }
-length();
+
+//function to check spelling and value for lowercase
+function chooseLowercase() {
+  checkLower = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
+
+  if (checkUpper === null || checkUpper === "") {
+    alert("Please type an answer")
+    chooseLowercase();
+
+  } else if 
+    (checkUpper === "yes" || checkUpper === "Yes") {
+    chooseLowercase = true;
+    return checkUpper;
+
+  } else if  
+    (checkUpper === "no" || checkUpper === "n") {
+    chooseLowercase = false;
+    return checkUpper;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseLowercase();
+  }
+
+  return checkLower;
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
