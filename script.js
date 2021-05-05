@@ -52,21 +52,21 @@ function chooseUppercase() {
 
 //function to check spelling and value for lowercase
 function chooseLowercase() {
-  checkLower = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
+  checkNum = prompt("Do you want to include numbers in your password? \n(Yes or No)");
 
-  if (checkUpper === null || checkUpper === "") {
+  if (checkLower === null || checkLower === "") {
     alert("Please type an answer")
     chooseLowercase();
 
   } else if 
-    (checkUpper === "yes" || checkUpper === "Yes") {
+    (checkLower === "yes" || checkLower === "Yes") {
     chooseLowercase = true;
-    return checkUpper;
+    return checkNum;
 
   } else if  
-    (checkUpper === "no" || checkUpper === "n") {
+    (checkLower === "no" || checkLower === "n") {
     chooseLowercase = false;
-    return checkUpper;
+    return checkLower;
 
   } else {
     alert("Please answer Yes or No");
@@ -75,7 +75,31 @@ function chooseLowercase() {
 
   return checkLower;
 }
+ //function to choose number 
+function chooseNumber() {
+  checkNum = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
 
+  if (checkNum === null || checkNum === "") {
+    alert("Please type an answer")
+    chooseNumber();
+
+  } else if 
+    (checkNum === "yes" || checkNum === "Yes") {
+      chooseNumber = true;
+    return checkNum;
+
+  } else if  
+    (checkNum === "no" || checkNum === "n") {
+      chooseNumber = false;
+    return checkNum;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseNumber();
+  }
+
+  return checkNum;
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
