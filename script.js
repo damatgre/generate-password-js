@@ -10,6 +10,7 @@ var checkNum;
 var checkUpper;
 var checkLower;
 var checkSpecialChar;
+var passChar
 
 //function to confirm which characters are used in password
 //originally separate, now combined for one
@@ -24,6 +25,10 @@ function generatePassword() {
   }
 
   alert("You chose to have " + lengthPass + " characters");
+
+  var checkUpper = confirm("Click OK to confirm if you would like to include uppercase letters");
+  var checkLower = confirm("Click OK to confirm if you would like to include lowercase letters");
+  var checkUpper = confirm("Click OK to confirm if you would like to include numbers");
 }
 
 console.log(generatePassword);
