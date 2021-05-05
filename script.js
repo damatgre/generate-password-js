@@ -1,8 +1,8 @@
 // Assignment code here
-var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-var alphaLower = "abcdefghijklmnopqrstuvwxyz"
-var num = "0123456789"
-var specialChar = "!()#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var alphaLower = "abcdefghijklmnopqrstuvwxyz";
+var num = "0123456789";
+var specialChar = "!()#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var lengthPass;
 var checkNum;
 var checkUpper;
@@ -101,6 +101,31 @@ function chooseNumber() {
   return checkNum;
 }
 
+//function to choose number 
+function chooseSpecChar() {
+  checkSpecial = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
+
+  if (checkSpecial === null || checkSpecial === "") {
+    alert("Please type an answer")
+    chooseSpecChar();
+
+  } else if 
+    (checkSpecial === "yes" || checkSpecial === "Yes") {
+      chooseSpecChar = true;
+    return checkNum;
+
+  } else if  
+    (checkSpecial === "no" || checkSpecial === "n") {
+      chooseSpecChar = false;
+    return checkSpecial;
+
+  } else {
+    alert("Please answer Yes or No");
+    chooseSpecChar();
+  }
+
+  return checkSpecial;
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
