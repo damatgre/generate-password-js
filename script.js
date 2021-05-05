@@ -3,129 +3,28 @@ var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 var alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+//variables to pull info
 var lengthPass;
 var checkNum;
 var checkUpper;
 var checkLower;
 var checkSpecialChar;
 
+//function to confirm which characters are used in password
+//originally separate, now combined for one
 
-//function to determine length
-function length() {
-  lengthPass = prompt("Choose how many character you'd like in your password. Must be between 8 and 128");
+function generatePassword() {
+  var lengthPass = prompt("How many characters would you like in your password? Must be between 8 and 128 characters.")
 
-  if (lengthPass >= 8 && lengthPass <= 128) {
-    alert("Please choose the parameters of your password using the next four prompts");
-    length = lengthPass();
-
-  } else if (lengthPass < 8 || lengthPass > 128) {
-    alert("Password must be between 8 and 128 characters");
-    length();
+  //If lengthPass isn't in parameters
+  while(lengthPass <= 8 || lengthPass >= 128) {
+    prompt("Password must have between 8 and 128 characters. Try again.");
+    var lengthPass = prompt("How many characters would you like in your password? Must be between 8 and 128 characters.")
   }
-};
-
-//function to determine uppercase
-function chooseUppercase() {
-  checkUpper = prompt("Do you want to include uppercase letters in your password? \n(Yes or No)");
-
-  if (checkUpper === null || checkUpper === "") {
-    alert("Please type an answer")
-    chooseUppercase();
-
-  } else if 
-    (checkUpper === "yes" || checkUpper === "Yes") {
-    chooseUppercase = true;
-    return checkUpper;
-
-  } else if  
-    (checkUpper === "no" || checkUpper === "n") {
-    chooseUppercase = false;
-    return checkUpper;
-
-  } else {
-    alert("Please answer Yes or No");
-    chooseUppercase();
-  }
-
-  return checkUpper;
 }
 
-//function to check spelling and value for lowercase
-function chooseLowercase() {
-  checkNum = prompt("Do you want to include numbers in your password? \n(Yes or No)");
-
-  if (checkLower === null || checkLower === "") {
-    alert("Please type an answer")
-    chooseLowercase();
-
-  } else if 
-    (checkLower === "yes" || checkLower === "Yes") {
-    chooseLowercase = true;
-    return checkNum;
-
-  } else if  
-    (checkLower === "no" || checkLower === "n") {
-    chooseLowercase = false;
-    return checkLower;
-
-  } else {
-    alert("Please answer Yes or No");
-    chooseLowercase();
-  }
-
-  return checkLower;
-}
- //function to choose number 
-function chooseNumber() {
-  checkNum = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
-
-  if (checkNum === null || checkNum === "") {
-    alert("Please type an answer")
-    chooseNumber();
-
-  } else if 
-    (checkNum === "yes" || checkNum === "Yes") {
-      chooseNumber = true;
-    return checkNum;
-
-  } else if  
-    (checkNum === "no" || checkNum === "n") {
-      chooseNumber = false;
-    return checkNum;
-
-  } else {
-    alert("Please answer Yes or No");
-    chooseNumber();
-  }
-
-  return checkNum;
-}
-
-//function to choose number 
-function chooseSpecChar() {
-  checkSpecial = prompt("Do you want to include lowercase letters in your password? \n(Yes or No)");
-
-  if (checkSpecial === null || checkSpecial === "") {
-    alert("Please type an answer")
-    chooseSpecChar();
-
-  } else if 
-    (checkSpecial === "yes" || checkSpecial === "Yes") {
-      chooseSpecChar = true;
-    return checkNum;
-
-  } else if  
-    (checkSpecial === "no" || checkSpecial === "n") {
-      chooseSpecChar = false;
-    return checkSpecial;
-
-  } else {
-    alert("Please answer Yes or No");
-    chooseSpecChar();
-  }
-
-  return checkSpecial;
-}
+console.log(generatePassword);
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
