@@ -20,7 +20,7 @@ function generatePassword() {
 
   //If lengthPass isn't in parameters
   while (lengthPass <= 8 || lengthPass >= 128) {
-    prompt("Password must have between 8 and 128 characters. Try again.");
+    alert("Password must have between 8 and 128 characters. Try again.");
     var lengthPass = prompt("How many characters would you like in your password? Must be between 8 and 128 characters.")
   }
 
@@ -59,8 +59,7 @@ function generatePassword() {
     passwordChar = passwordChar.concat(specialChar)
   }
 
-  //not sure needed
-  console.log(passwordChar)
+  
 
   //empty string to be filled by parameters
 
@@ -73,7 +72,7 @@ function generatePassword() {
   return randomPass
 }
 
-console.log(generatePassword);
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
