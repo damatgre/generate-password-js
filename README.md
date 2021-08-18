@@ -1,4 +1,4 @@
-# leto2-ghola-civil
+# Generate Passwords - JS Project
 
 ## Description
 
